@@ -5,11 +5,13 @@ import articlesApi from 'lib/api/articles-api'
 
 export async function getStaticProps() {
   const allArticlesJson = await articlesApi.get('api/product');
+  const oneHour = 3600;
 
   return {
     props: {
       allArticlesData: allArticlesJson.data.filter((article) => article.price)
     },
+    revalidate: oneHour,
   };
 }
 
