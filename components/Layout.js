@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BasicBreadcrumbs from './breadcrumbs';
 import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
@@ -6,9 +7,7 @@ const Layout = ({ children }) => {
     <div className={styles.container}>
       <header className={styles.header}>
         <>
-          <Link href="/">
-            Inicio
-          </Link>
+          <BasicBreadcrumbs />
         </>
       </header>
 

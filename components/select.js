@@ -6,7 +6,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function BasicSelect({ options, label }) {
-  const [value, setValue] = useState('');
+  const defaultOption = options?.length === 1 ? options[0].code : '';
+  const [value, setValue] = useState(defaultOption);
 
   const handleChange = (event) => {
     setValue(event.target.value);

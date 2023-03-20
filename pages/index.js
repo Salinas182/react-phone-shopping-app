@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ArticlesList from '../components/articles-list'
 import articlesApi from 'lib/api/articles-api'
+import BasicBreadcrumbs from 'components/breadcrumbs';
 
 export async function getStaticProps() {
   const allArticlesJson = await articlesApi.get('api/product');
@@ -25,6 +26,11 @@ export default function Home({ allArticlesData }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+
+        <header>
+          <BasicBreadcrumbs />
+        </header>
+
         <main>
           <div className='mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
             <ArticlesList allArticlesData={allArticlesData} />

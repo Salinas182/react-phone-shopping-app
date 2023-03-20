@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import Head from "next/head";
-import Layout from "../../components/Layout";
+import Layout from "components/Layout";
 import { getArticleData, getArticlesIds } from '../../lib/articles';
 import { ArticleDetails } from "components/article-details";
 
@@ -24,6 +25,11 @@ export async function getStaticProps({ params }) {
 
 const ArticleView = ({ articleData }) => {
   const article = articleData?.articleInfo;
+
+  useEffect(() => {
+    localStorage.setItem('device', `${article?.brand} ${article?.model}`);
+  },[article]);
+
   return (
     <>
       <Layout>
