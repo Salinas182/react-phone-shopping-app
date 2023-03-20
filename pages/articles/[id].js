@@ -27,7 +27,7 @@ const ArticleView = ({ articleData }) => {
   const article = articleData?.articleInfo;
 
   useEffect(() => {
-    localStorage.setItem('device', `${article?.brand} ${article?.model}`);
+    sessionStorage.setItem('device', `${article?.brand} ${article?.model}`);
   },[article]);
 
   return (

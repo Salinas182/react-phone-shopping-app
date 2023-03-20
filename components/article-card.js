@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import { Button } from '@mui/material';
 
 export default function ArticleCard({ article }) {
   return (
@@ -19,11 +18,6 @@ export default function ArticleCard({ article }) {
           </h3>
         </div>
         <p className="text-sm font-medium text-gray-900 mt-4 mb-2">{article.price} €</p>
-      </div>
-      <div className='flex justify-center mb-2 content-end mt-auto'>
-        <Button variant="contained" className="button">
-          Añadir
-        </Button>
       </div>
     </div>
   )

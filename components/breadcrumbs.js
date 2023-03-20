@@ -11,7 +11,7 @@ export default function BasicBreadcrumbs() {
 
   useEffect(() => {
     if (!isHomeView) {
-      setDevice(localStorage.getItem('device'));
+      setDevice(sessionStorage.getItem('device'));
     }
   }, [isHomeView]);
 

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import BasicBreadcrumbs from './breadcrumbs';
+import CartBadge from './cart-badge';
 import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <header className={styles.header}>
         <>
           <BasicBreadcrumbs />
+          <CartBadge />
         </>
       </header>
 
@@ -16,10 +17,6 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </main>
-
-      <div className={styles.backToHome}>
-        <Link href="/">← Volver a inicio</Link>
-      </div>
     </div>
   );
 };
